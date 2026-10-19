@@ -1,0 +1,11 @@
+cff-version: 1.2.0
+message: "Public preprint; not peer reviewed. Cite the version used. No DOI has been assigned."
+title: "Semantic and Epistemic Governance in Language-Model Reasoning"
+authors:
+  - family-names: "O'Brien"
+    given-names: "Timothy"
+    orcid: "https://orcid.org/0009-0001-2589-347X"
+license: CC-BY-4.0
+url: "https://github.com/prosessleder/semantic-epistemic-governance-foundations-preprint"
+version: "0.2.0-preprint"
+date-released: "2026-10-19"

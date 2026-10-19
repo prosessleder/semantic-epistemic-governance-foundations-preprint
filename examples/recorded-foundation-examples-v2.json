@@ -1,0 +1,91 @@
+{
+  "benchmark_inputs_changed": false,
+  "checker_sha256": "387bcc651b6cc5819ae514710a4e085c5597eb8b25647eeb2809f15eacd2b30b",
+  "eligibility_packets": {
+    "pair": {
+      "affirmative_assertion_warranted": true,
+      "decision": "allow",
+      "quorum": true
+    },
+    "single": {
+      "affirmative_assertion_warranted": false,
+      "decision": "undetermined",
+      "quorum": false
+    }
+  },
+  "empty_world_set_rejected": true,
+  "four_cell_affirmative_answers": [
+    {
+      "asserted_eligibility_warranted": true,
+      "change": "empty",
+      "packet": "pair",
+      "proposed_change_valid": true,
+      "response_eligibility_assertion": "allow"
+    },
+    {
+      "asserted_eligibility_warranted": false,
+      "change": "empty",
+      "packet": "single",
+      "proposed_change_valid": true,
+      "response_eligibility_assertion": "allow"
+    },
+    {
+      "asserted_eligibility_warranted": true,
+      "change": "joint",
+      "packet": "pair",
+      "proposed_change_valid": false,
+      "response_eligibility_assertion": "allow"
+    },
+    {
+      "asserted_eligibility_warranted": false,
+      "change": "joint",
+      "packet": "single",
+      "proposed_change_valid": false,
+      "response_eligibility_assertion": "allow"
+    }
+  ],
+  "new_model_calls": 0,
+  "observation_branches": {
+    "c": {
+      "False": "allow",
+      "True": "deny"
+    },
+    "p": {
+      "False": "deny",
+      "True": "allow"
+    }
+  },
+  "one_report_undetermined_answer_is_correct": true,
+  "preserved_original_receipt_sha256": "5de090ea9d5d19d5c91268b87aa0b7f507d11f2fcecaa99e8672858b0655695c",
+  "preserved_v1_runner_sha256": "92b1f51ede221ba5c76a8d37ccabad27af272640d9f298e46fc926f77bd77f49",
+  "removed_r3": {
+    "after_r3_added_release": "undetermined",
+    "release": "deny",
+    "worlds": [
+      {
+        "c": true,
+        "p": false
+      }
+    ]
+  },
+  "scope": "Supplemental finite conceptual checks, not new model measurements.",
+  "semantic_construction": {
+    "empty": {
+      "gains": [],
+      "goal_met": true,
+      "valid": true
+    },
+    "joint": {
+      "gains": [
+        [
+          "a"
+        ]
+      ],
+      "goal_met": true,
+      "valid": false
+    }
+  },
+  "status": "PASS",
+  "supported_negative_literal_is_respected": true,
+  "v1_scientific_replay_exact_except_documented_runner_hash": true
+}

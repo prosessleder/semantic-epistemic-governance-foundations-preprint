@@ -1,0 +1,131 @@
+{
+  "benchmark_inputs_changed": false,
+  "epistemic": {
+    "actions": {
+      "override": "deny",
+      "release": "undetermined",
+      "retain": "allow"
+    },
+    "c_certificates": [
+      [
+        0,
+        1
+      ]
+    ],
+    "c_maximum_disjoint": 2,
+    "inclusion_maximal_not_maximum": [
+      [
+        "p"
+      ],
+      [
+        "c",
+        "d"
+      ]
+    ],
+    "optimal_objective": [
+      0,
+      1
+    ],
+    "p_certificates": [
+      [
+        0,
+        2
+      ],
+      [
+        1,
+        2
+      ]
+    ],
+    "p_maximum_disjoint": 2,
+    "p_observation_branches": {
+      "False": {
+        "override": "deny",
+        "release": "deny",
+        "retain": "allow"
+      },
+      "True": {
+        "override": "deny",
+        "release": "allow",
+        "retain": "allow"
+      }
+    },
+    "p_without_independent_report": 1,
+    "repairs": [
+      [
+        "p"
+      ],
+      [
+        "c"
+      ]
+    ],
+    "tied_optimal_observations": [
+      "p",
+      "c"
+    ],
+    "worlds": [
+      {
+        "c": true,
+        "p": false
+      },
+      {
+        "c": false,
+        "p": true
+      }
+    ]
+  },
+  "new_model_calls": 0,
+  "scope": "Conceptual illustrations, exhaustive finite checks; not model measurements or benchmark additions.",
+  "script_sha256": "10eeee387ab099d886c380b14d7d8750dcdf5c08ebcacc8b549c4a778cfa2ecd",
+  "semantic": {
+    "gains": {
+      "combined": [
+        [
+          "a"
+        ]
+      ],
+      "first_only": [],
+      "original": [],
+      "second_only": []
+    },
+    "profiles": [
+      [],
+      [
+        "a"
+      ],
+      [
+        "b"
+      ],
+      [
+        "a",
+        "b"
+      ]
+    ],
+    "release": {
+      "combined": [
+        false,
+        true,
+        false,
+        true
+      ],
+      "first_only": [
+        false,
+        false,
+        false,
+        true
+      ],
+      "original": [
+        false,
+        false,
+        false,
+        true
+      ],
+      "second_only": [
+        false,
+        false,
+        false,
+        true
+      ]
+    }
+  },
+  "status": "PASS"
+}

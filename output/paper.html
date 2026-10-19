@@ -1,0 +1,917 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Semantic and Epistemic Governance</title>
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      border: none;
+      border-top: 1px solid #1a1a1a;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+  </style>
+</head>
+<body>
+<h1
+id="semantic-and-epistemic-governance-in-language-model-reasoning">Semantic
+and Epistemic Governance in Language-Model Reasoning</h1>
+<p>Timothy O’Brien · ORCID <a
+href="https://orcid.org/0009-0001-2589-347X">0009-0001-2589-347X</a>.
+Independent researcher; no institutional affiliation.</p>
+<p>Working research draft, 19 October 2026. Not peer reviewed. Copyright
+2026 Timothy O’Brien. CC BY 4.0.</p>
+<h2 id="abstract">Abstract</h2>
+<p>A language model can propose a change that achieves a requested goal
+while altering permissions elsewhere in a rule system. It can also reach
+a plausible conclusion from evidence that the governing policy does not
+authorize it to use. These are different errors. We distinguish semantic
+governance, concerning the admissibility and consequences of changes to
+a defined representation, from epistemic governance, concerning the
+admissibility and use of claims under explicit evidence rules. We
+formulate task-relative contracts for ontology changes, protected
+queries, authority, provenance, conflict handling and warranted action.
+We explain how these contracts interact and how model answers can be
+evaluated while accepting multiple valid witnesses, repairs and
+investigation plans. The framework draws on established work in ontology
+evolution, policy analysis, provenance and consistent query answering.
+Its contribution is an evaluation-oriented synthesis, not a claim to
+originate those theories or the terms themselves. The framework does not
+require a particular benchmark result and does not establish real-source
+truth, autonomous-agent containment or universal governance
+competence.</p>
+<h2 id="introduction">1. Introduction</h2>
+<p>Meaning and evidence create different obligations for a model
+answering a constrained reasoning problem. The first obligation is to
+understand what the rules permit and what a proposed change would imply.
+The second is to determine which claims are sufficiently supported to
+use in a conclusion. A model may satisfy either obligation while failing
+the other.</p>
+<p>Consider a system in which a classification gives permission to
+perform an operation. Adding one classification edge can make that
+permission available to a previously ineligible starting profile. The
+visible goal may be achieved, yet the change may violate a constraint on
+additional access. Checking only the requested example would miss that
+consequence.</p>
+<p>Now suppose a reviewer receives several reports saying that the
+change is safe. Their number is not sufficient by itself. Some reports
+may lack authority for the claim, refer to an old version, or repeat the
+same original observation. Other eligible reports may conflict. A model
+must apply a policy for accepting and using claims rather than merely
+express confidence or uncertainty.</p>
+<p>We use semantic governance and epistemic governance as task-relative
+terms for these two obligations. Both have antecedents in existing
+research. The purpose is to make their interaction explicit enough to
+specify reproducible evaluations of language-model answers. The
+evaluated object is an LLM’s response under a declared input and
+assistance condition. An external checker, a release system and an
+autonomous agent are different objects and require different
+evidence.</p>
+<p>The contribution has three parts: a pair of explicit task contracts
+separating change admissibility from evidence warrant; finite,
+executable examples showing noncomposing edits, conflicting
+corroboration and alternative valid answers; and a reporting contract
+separating answer content, delivery failures and external assistance.
+These are specifications and checked illustrations, rather than a new
+ontology logic or a measurement of model performance.</p>
+<h2 id="intellectual-foundations-and-scope">2. Intellectual foundations
+and scope</h2>
+<p>Ontology-based governance is established work. Calvanese and
+colleagues govern data-aware processes through an ontology and study
+verification of properties across evolving states. Their object is a
+formally specified process, whereas the present framework concerns
+whether a language model correctly answers a reasoning task about such
+constraints <a href="#ref-calvanese">1</a>.</p>
+<p>Ontology inseparability, conservative extension and logical
+difference provide ways to compare the consequences of different
+representations. A benchmark that protects a specified permission query
+over a fixed finite input basis uses a narrower observable contract. It
+does not establish preservation of every possible query in an
+unrestricted ontology language <a href="#ref-botoeva">2</a>.</p>
+<p>Provenance research studies how information depends on its origins
+and transformations. Provenance semirings formalize annotations through
+query evaluation, while PROV-O supplies a standardized ontology of
+provenance relationships. Neither the existence of a provenance graph
+nor the presence of different source names automatically establishes
+independent, truthful evidence. The policy must specify how those
+relationships affect acceptance <a href="#ref-green">3</a>, <a
+href="#ref-provo">4</a>.</p>
+<p>Repair-based consistent query answering supplies an established
+response to inconsistency: preserve admissible consistent alternatives
+and ask which answers survive them. The choice of repair relation and
+the decision to reason across all repairs are substantive policy
+choices. They are not invented by applying them to LLM outputs <a
+href="#ref-arenas">5</a>.</p>
+<p>Formal reasoning benchmarks such as ProofWriter already evaluate
+implications, proofs and abduction over supplied theories. External
+correction and behavioral tests also have substantial prior art. The
+narrower opportunity here is to connect changes in protected
+consequences with rules for accepting evidence, and to separate those
+obligations in a precise model-answer evaluation. The synthesis
+specifies an evaluation contract for model answers, drawing on these
+complementary methods <a href="#ref-proofwriter">6</a>, <a
+href="#ref-checklist">7</a>, <a href="#ref-critic">8</a>.</p>
+<p><strong>Table 1. Established foundations and the narrower evaluation
+scope adopted here.</strong></p>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th>Established foundation</th>
+<th>What it supplies</th>
+<th>Scope adopted here</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Ontology-based process governance</td>
+<td>Formal constraints on evolving data-aware processes</td>
+<td>Judge an LLM answer; do not claim process enforcement</td>
+</tr>
+<tr>
+<td>Inseparability and conservative extension</td>
+<td>Compare consequences under a declared query vocabulary</td>
+<td>Protect specified queries on a finite input basis</td>
+</tr>
+<tr>
+<td>Provenance representations</td>
+<td>Trace dependencies and transformations of information</td>
+<td>Apply an explicit original-leaf corroboration rule</td>
+</tr>
+<tr>
+<td>Consistent query answering</td>
+<td>Retain answers across admissible repairs</td>
+<td>State repair policy and compatible completion semantics</td>
+</tr>
+<tr>
+<td>Formal language reasoning benchmarks</td>
+<td>Evaluate consequences and supporting derivations</td>
+<td>Distinguish supplied-candidate judgment from construction</td>
+</tr>
+<tr>
+<td>Correction and behavioral testing</td>
+<td>Separate evaluation conditions and sources of feedback</td>
+<td>Disclose diagnostic information and stopping assistance</td>
+</tr>
+</tbody>
+</table>
+<p>Two boundaries are especially important. First, preserving a
+protected permission query on all profiles in a finite basis is not a
+conservative-extension theorem for an unrestricted ontology. Query
+selection and the input basis form part of the experimental contract.
+Second, provenance and authority play different roles. A record of a
+report’s derivation can reveal shared origins, but source eligibility
+and the required corroboration threshold are additional policy inputs. A
+provenance formalism does not itself select that policy or establish the
+reported claim’s truth.</p>
+<p>The repair literature also makes it necessary to specify which
+alternatives count. The present examples use deletion-only,
+inclusion-maximal consistent subsets of supported facts. This
+instantiates a particular repair relation; it is not an assertion that
+every consistent-query-answering formalism uses the same one. Likewise,
+supplying an LLM with a concrete defect or consequence table is a
+stronger information condition than asking it to reconsider its
+response. The conceptual synthesis organizes these choices into an
+evaluation contract. It does not establish priority over the underlying
+theories, a new account of institutional governance, or the superiority
+of one normative conflict rule.</p>
+<h2 id="semantic-governance-as-a-change-contract">3. Semantic governance
+as a change contract</h2>
+<p>Let a semantic contract specify an initial ontology O, a vocabulary,
+a set X of admissible starting profiles, permitted changes, requested
+positive and negative goals, protected queries Q, and an
+expansion-approval policy. A query’s answer is evaluated under the
+declared semantics, including any operational treatment of inconsistent
+profiles.</p>
+<p>For a protected query q and a proposed change d, the gain set
+contains exactly those admissible profiles for which q becomes true
+after the change and was false before it. Semantic admissibility
+requires that d can be applied, that every goal is satisfied, and that
+every protected gain satisfies the approval policy. A no-expansion task
+requires each gain set to be empty. A contract allowing particular
+expansions instead requires the corresponding approvals; approval does
+not make a failed goal correct.</p>
+<p>This contract distinguishes the desired effect from allowed side
+effects. It also fixes the scope of the claim. Checking all subsets of a
+supplied finite vocabulary can be complete for that basis while saying
+nothing about new vocabulary, unmodeled relations or an inaccurate
+domain representation.</p>
+<p>More precisely, write
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>q</mi><mi>O</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo stretchy="false" form="postfix">)</mo><mo>∈</mo><mo stretchy="false" form="prefix">{</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">q_O(x)\in\{0,1\}</annotation></semantics></math>
+for the declared answer to a protected Boolean query on profile
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>x</mi><annotation encoding="application/x-tex">x</annotation></semantics></math>,
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo>⊕</mo><mi>d</mi></mrow><annotation encoding="application/x-tex">O\oplus d</annotation></semantics></math>
+for an applicable change. Then</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>G</mi><mi>q</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>O</mi><mo>,</mo><mi>d</mi><mo>;</mo><mi>X</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mo stretchy="false" form="prefix">{</mo><mi>x</mi><mo>∈</mo><mi>X</mi><mo>:</mo><msub><mi>q</mi><mrow><mi>O</mi><mo>⊕</mo><mi>d</mi></mrow></msub><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mn>1</mn><mspace width="0.222em"></mspace><mo>∧</mo><mspace width="0.222em"></mspace><msub><mi>q</mi><mi>O</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mn>0</mn><mo stretchy="false" form="postfix">}</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">
+G_q(O,d;X)=\{x\in X:q_{O\oplus d}(x)=1\ \land\ q_O(x)=0\}.
+</annotation></semantics></math></p>
+<p>If
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>P</mi><mi>q</mi></msub><mo>⊆</mo><mi>X</mi></mrow><annotation encoding="application/x-tex">P_q\subseteq X</annotation></semantics></math>
+is the set of profile gains authorized for this particular change and
+version, admissibility requires all requested goals and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>G</mi><mi>q</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>O</mi><mo>,</mo><mi>d</mi><mo>;</mo><mi>X</mi><mo stretchy="false" form="postfix">)</mo><mo>⊆</mo><msub><mi>P</mi><mi>q</mi></msub></mrow><annotation encoding="application/x-tex">G_q(O,d;X)\subseteq P_q</annotation></semantics></math>
+for every
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>q</mi><mo>∈</mo><mi>Q</mi></mrow><annotation encoding="application/x-tex">q\in Q</annotation></semantics></math>.
+No expansion sets each
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>P</mi><mi>q</mi></msub><annotation encoding="application/x-tex">P_q</annotation></semantics></math>
+to the empty set. Equality of all before-and-after query answers is
+stronger: no expansion alone permits losses. Applicability, version
+binding and any required approval certificate are additional checks; the
+gain equation does not authenticate them.</p>
+<h3 id="direct-indirect-and-compositional-consequences">3.1 Direct,
+indirect and compositional consequences</h3>
+<p>An edit need not mention a permission head to change access. A new
+intermediate classification can connect existing rules. Removing a
+conflict can also restore an effective permission that was already
+derivable but suppressed by the conflict policy. The checker must
+therefore compare consequences rather than search only for syntactically
+sensitive edits.</p>
+<p>Individually admissible changes need not remain admissible together.
+One change may enable the antecedent used by another. A later change
+must be evaluated against the relevant current state, or the complete
+batch must be checked under a contract that permits atomic application.
+These are different obligations: final-state preservation does not imply
+preservation at every intermediate prefix.</p>
+<h3 id="constructive-answers-and-counterexamples">3.2 Constructive
+answers and counterexamples</h3>
+<p>A model may be asked to judge a supplied candidate, construct a valid
+change, or provide a counterexample to a preservation claim. Those tasks
+should not be treated as interchangeable. A correct judgment does not
+demonstrate that the model can synthesize a repair, and a valid repair
+does not prove that it can establish the absence of every
+counterexample.</p>
+<p>When several changes or witnesses satisfy the contract, evaluation
+should execute and validate the submitted object. Comparing it to one
+example answer would confuse reference choice with semantic validity.
+Optimality is an additional requirement only when the task states it and
+the evaluator can establish it.</p>
+<h3
+id="checked-example-individually-preserving-edits-with-a-joint-gain">3.3
+Checked example: individually preserving edits with a joint gain</h3>
+<p>Let the admissible profiles be all four subsets of {a, b}. The
+initial rules are: a implies m; b implies t; and m together with t
+implies release. Derivation uses the least forward-chaining closure.
+Profiles cannot initially contain the intermediate symbols m, t or u.
+The protected query asks whether release is derived. The original system
+grants release only to {a, b}.</p>
+<p>Consider two additions: the first says a implies u, and the second
+says u implies t. The first alone leaves every protected answer
+unchanged. The second alone also preserves every answer, because no
+admissible profile or original rule supplies u. Together, however, they
+grant release to {a}. The first supplies u and the second supplies t,
+while the original rule already supplies m. This exhausts the
+four-profile basis; the only new gaining profile is {a}.</p>
+<p><strong>Table 2. Exhaustive protected-query answers on the four
+admissible profiles. Only the joint edit creates a gain.</strong></p>
+<table>
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+</colgroup>
+<thead>
+<tr>
+<th>Starting profile</th>
+<th>Original</th>
+<th>First edit only</th>
+<th>Second edit only</th>
+<th>Both edits</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Empty</td>
+<td>No</td>
+<td>No</td>
+<td>No</td>
+<td>No</td>
+</tr>
+<tr>
+<td>{a}</td>
+<td>No</td>
+<td>No</td>
+<td>No</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>{b}</td>
+<td>No</td>
+<td>No</td>
+<td>No</td>
+<td>No</td>
+</tr>
+<tr>
+<td>{a, b}</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
+<p>Thus query preservation of separately checked edits does not compose
+automatically. This example concerns preservation alone; it does not
+claim that each edit satisfies an additional, unspecified positive goal.
+If the declared goal is to grant release to {a}, the combined edit meets
+that goal but fails a no-expansion contract. A different contract could
+permit exactly that gain through a valid approval. Those are two
+different policies applied to the same consequences, rather than two
+competing answers to one fixed task.</p>
+<h2 id="epistemic-governance-as-an-evidence-use-contract">4. Epistemic
+governance as an evidence-use contract</h2>
+<p>Epistemic governance specifies which claims may be accepted and used
+for a particular purpose. This differs from generic reasoning about
+uncertain information. The contract can restrict source authority by
+claim and task, bind reports to current versions, require independent
+corroboration, and prescribe how conflicts are handled.</p>
+<p>Let the evidence policy map a packet E to supported claims and a
+family of admissible consistent interpretations. A repair is one such
+interpretation under the chosen repair rule. Inclusion-maximal repairs
+contain every supported fact that can be added consistently; they need
+not contain the greatest number of facts. Other repair policies are
+possible and would define different tasks.</p>
+<p>Each repair may leave facts unsettled. Consider all compatible
+completions across all repairs. An action is warranted allow when its
+release predicate is true in every admissible completion; warranted deny
+when false in every completion; otherwise the conclusion is
+undetermined. The admissible-world set must be nonempty, or the contract
+must explicitly define how an empty set is handled. Vacuous universal
+truth must not silently authorize an action.</p>
+<p>Undetermined is not a denial. Operationally a system might hold both,
+but an evaluation must distinguish insufficient evidence from evidence
+establishing that release is impermissible. Similarly, an unsupported
+approval can be an epistemic error even when the unobserved underlying
+state would happen to allow the action.</p>
+<p>For the deletion-only policy used here, let
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>S</mi><mo stretchy="false" form="prefix">(</mo><mi>E</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">S(E)</annotation></semantics></math>
+be the finite set of supported Boolean literals,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>T</mi><annotation encoding="application/x-tex">T</annotation></semantics></math>
+the fixed integrity constraints, and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mrow><mi mathvariant="normal">Mod</mi><mo>&#8289;</mo></mrow><mi>T</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>R</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">\operatorname{Mod}_T(R)</annotation></semantics></math>
+the Boolean worlds satisfying
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>T</mi><annotation encoding="application/x-tex">T</annotation></semantics></math>
+and every literal in
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>R</mi><annotation encoding="application/x-tex">R</annotation></semantics></math>.
+Define</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ℛ</mi><mo stretchy="false" form="prefix">(</mo><mi>E</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><munder><mi mathvariant="normal">max</mi><mo accent="false">⊆</mo></munder><mo stretchy="false" form="prefix">{</mo><mi>R</mi><mo>⊆</mo><mi>S</mi><mo stretchy="false" form="prefix">(</mo><mi>E</mi><mo stretchy="false" form="postfix">)</mo><mo>:</mo><msub><mrow><mi mathvariant="normal">Mod</mi><mo>&#8289;</mo></mrow><mi>T</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>R</mi><mo stretchy="false" form="postfix">)</mo><mo>≠</mo><mi>⌀</mi><mo stretchy="false" form="postfix">}</mo><mo>,</mo><mspace width="2.0em"></mspace><mi>W</mi><mo stretchy="false" form="prefix">(</mo><mi>E</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><munder><mo>⋃</mo><mrow><mi>R</mi><mo>∈</mo><mi>ℛ</mi><mo stretchy="false" form="prefix">(</mo><mi>E</mi><mo stretchy="false" form="postfix">)</mo></mrow></munder><msub><mrow><mi mathvariant="normal">Mod</mi><mo>&#8289;</mo></mrow><mi>T</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>R</mi><mo stretchy="false" form="postfix">)</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">
+\mathcal R(E)=\max_{\subseteq}\{R\subseteq S(E):\operatorname{Mod}_T(R)\ne\varnothing\},
+\qquad
+W(E)=\bigcup_{R\in\mathcal R(E)}\operatorname{Mod}_T(R).
+</annotation></semantics></math></p>
+<p>Here maximality is by set inclusion. For nonempty
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>W</mi><mo stretchy="false" form="prefix">(</mo><mi>E</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">W(E)</annotation></semantics></math>
+and action predicate
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>r</mi><mi>a</mi></msub><annotation encoding="application/x-tex">r_a</annotation></semantics></math>,
+the decision is allow if
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>r</mi><mi>a</mi></msub><annotation encoding="application/x-tex">r_a</annotation></semantics></math>
+holds in every world, deny if it holds in none, and undetermined
+otherwise. Consistent
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>T</mi><annotation encoding="application/x-tex">T</annotation></semantics></math>
+guarantees at least the empty supported subset has a completion;
+inconsistent
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>T</mi><annotation encoding="application/x-tex">T</annotation></semantics></math>
+requires an explicit failure policy. These definitions separate report
+admission, repair selection and action evaluation, and make no
+probability assignment to worlds.</p>
+<h3 id="authority-provenance-and-truth">4.1 Authority, provenance and
+truth</h3>
+<p>Authority is task-relative eligibility to supply a claim; it is not a
+measured probability of truth. A source may be authorized for one fact
+and not another. Provenance records how a report depends on earlier
+observations; different speakers can share an origin. Requiring mutually
+disjoint original observations is one explicit corroboration policy, not
+a universal definition of independence.</p>
+<p>The policy cannot discover every lie from its internal structure
+alone. If all authorized reports consistently support a false claim and
+the supplied provenance contains no detectable defect, compliance with
+the contract need not reveal that external falsehood. An evaluation
+under this contract measures application of supplied authority and
+evidence rules, not the real-world reliability of those inputs.</p>
+<h3 id="choosing-further-evidence">4.2 Choosing further evidence</h3>
+<p>When an action remains undetermined, a model can be asked to choose a
+useful observation or a contingent investigation. The objective must be
+specified. Minimizing the worst number of unresolved actions and then
+worst total effort is different from maximizing expected information
+gain.</p>
+<p>An investigation plan can be evaluated as a finite mathematical
+object. Its branches must correspond to attainable observations;
+prerequisites must hold where a query is used; and the claimed objective
+must be achieved. Generating that object is still an LLM reasoning task.
+It is not evidence that an autonomous agent can collect the
+observations, authenticate them or execute the resulting action
+safely.</p>
+<h3 id="checked-example-corroboration-conflict-and-warranted-action">4.3
+Checked example: corroboration, conflict and warranted action</h3>
+<p>Let p denote verified authorization and c a confidentiality
+restriction. The integrity rule forbids p and c together. Each positive
+claim requires two current authorized reports whose sets of original
+observation leaves are disjoint. This is an illustrative contract: all
+five reports below are stipulated to satisfy the authority, scope and
+version checks.</p>
+<p><strong>Table 3. Illustrative supported claims and original
+observation leaves. All reports pass the stipulated authority and
+version checks.</strong></p>
+<table>
+<thead>
+<tr>
+<th>Report</th>
+<th>Claim</th>
+<th>Original observation leaves</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>r1</td>
+<td>p</td>
+<td>{o1, o2}</td>
+</tr>
+<tr>
+<td>r2</td>
+<td>p</td>
+<td>{o2, o3}</td>
+</tr>
+<tr>
+<td>r3</td>
+<td>p</td>
+<td>{o4}</td>
+</tr>
+<tr>
+<td>r4</td>
+<td>c</td>
+<td>{o5}</td>
+</tr>
+<tr>
+<td>r5</td>
+<td>c</td>
+<td>{o6}</td>
+</tr>
+</tbody>
+</table>
+<p>Reports r1 and r2 do not meet the stipulated disjoint-origin
+corroboration rule for p: they share o2. Report r3 supplies a disjoint
+original-observation set under that rule. Either {r1, r3} or {r2, r3}
+meets the quorum for p; {r4, r5} meets it for c. The supported fact set
+is therefore {p, c}, despite its inconsistency. Support admission and
+conflict resolution are separate stages of this policy.</p>
+<p>The inclusion-maximal consistent repairs are {p} and {c}. Completing
+them under the integrity rule gives exactly two worlds: p true with c
+false, and p false with c true. Suppose release requires p and absence
+of c, override requires both p and c, and retain requires at least one
+of them. The warranted decisions are respectively undetermined, deny and
+allow. Returning allow for release would overlook an admissible world;
+returning undetermined for override would overlook that the integrity
+rule rules it out in every world.</p>
+<p>One unit-cost observation of p resolves the only unresolved action.
+On its true branch release becomes allow; on its false branch release
+becomes deny. An observation of c achieves the same objective. Both
+one-query plans are optimal for minimizing unresolved actions first and
+worst path effort second: they achieve zero unresolved actions at effort
+one, whereas a zero-query plan leaves release unresolved. The
+observation filters the existing two worlds; it does not recompute
+repairs from an altered report set. Accepting either optimal query
+avoids making the evaluator’s arbitrary reference choice part of the
+task.</p>
+<p>Removing r3 illustrates another policy consequence. Then p lacks the
+required corroboration, while c remains supported. The only repair is
+{c}, and release becomes deny. Adding the report with a disjoint origin
+moves that answer to undetermined by admitting a conflicting
+alternative. Adding supported evidence can therefore revoke a warranted
+denial and increase indeterminacy under this repair policy; this example
+does not show withdrawal of an existing allowance.</p>
+<p>Maximality must also remain distinct from maximum size. For a
+separate supported set {p, c, d}, suppose p conflicts with c and with d,
+while c and d are compatible. The inclusion-maximal repairs are {p} and
+{c, d}. A maximum-cardinality policy keeps only {c, d}; an
+inclusion-maximal policy keeps both. A decision depending on p can
+consequently differ. Neither policy may be substituted for the other
+after seeing a model’s answer.</p>
+<h2 id="how-the-two-obligations-interact">5. How the two obligations
+interact</h2>
+<p>The semantic question asks what follows from the represented rules
+and changes. The epistemic question asks what the authorized evidence
+warrants concluding about those conditions. Correct representation does
+not guarantee correct evidence use, and correct evidence use does not
+guarantee a valid change.</p>
+<p><strong>Table 4. Logical separation of semantic change validity and
+warrant of an asserted eligibility claim. Every answer affirmatively
+asserts eligibility; these are conceptual possibilities, not model
+results.</strong></p>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th>Semantic change</th>
+<th>Asserted eligibility</th>
+<th>Interpretation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Valid</td>
+<td>Warranted</td>
+<td>The proposed change and the affirmative eligibility claim satisfy
+their respective contracts</td>
+</tr>
+<tr>
+<td>Invalid</td>
+<td>Warranted</td>
+<td>A warranted eligibility claim does not rescue an invalid proposed
+change</td>
+</tr>
+<tr>
+<td>Valid</td>
+<td>Unsupported</td>
+<td>The change satisfies its contract, but the affirmative eligibility
+claim lacks the required support</td>
+</tr>
+<tr>
+<td>Invalid</td>
+<td>Unsupported</td>
+<td>The proposed change is invalid and the affirmative eligibility claim
+is unsupported</td>
+</tr>
+</tbody>
+</table>
+<p>The table defines possibilities rather than reporting model
+observations. An evaluation can instantiate them with independently
+checked examples. A combined end-to-end task would require an additional
+specification connecting actual proposed changes to evidence selection
+and use. Results from separate semantic and epistemic tracks do not
+automatically establish competence on that combined task.</p>
+<p>For a minimal four-cell construction, use the semantic example above
+and require the already satisfied goal that {a} derives m. An empty
+change is semantically valid; the combined change is invalid under no
+expansion. Separately, let a review-eligibility claim require two
+current, authorized, disjoint-origin reports. In every cell, consider an
+answer that proposes the indicated change and affirmatively asserts
+review eligibility. A packet containing the required report pair
+warrants that assertion; a packet containing only one report leaves
+eligibility undetermined, so the affirmative assertion is unsupported.
+Correctly returning undetermined for the one-report packet would satisfy
+the epistemic contract: insufficient evidence alone is not an
+evidence-use error. Pairing either proposed change with either evidence
+packet, while keeping the affirmative eligibility assertion fixed,
+realizes the four cells under one fixed pair of contracts. Eligibility
+remains a separate claim: two eligible reports do not prove that every
+protected semantic query was preserved. This construction illustrates
+the logical separation of obligations rather than measuring a model on a
+new joint task.</p>
+<h2 id="evaluating-language-model-answers">6. Evaluating language-model
+answers</h2>
+<p>An empirical protocol should fix the task version, input unit,
+model/provider, output contract, reasoning condition, resource allowance
+and assistance available before measuring outcomes. Complete-answer
+accuracy and component accuracy answer different questions. A correct
+release decision can conceal an incorrect explanation of the evidence; a
+partly correct explanation can still be insufficient to justify
+release.</p>
+<p>Delivery errors, resource failures and substantive reasoning errors
+should remain distinguishable. A code-fenced answer rejected by a
+bare-JSON contract is not proof that its logical content is wrong.
+Conversely, extracting a useful object after observing results is a new
+reporting sensitivity analysis, not the original primary score. Token
+exhaustion remains a failure under the declared allowance but should not
+be described as the same mechanism as a completed invalid witness.</p>
+<h3 id="feedback-and-correction">6.1 Feedback and correction</h3>
+<p>An unaided first answer, revision after an error notification, and
+revision after a diagnostic are separate conditions. An error-only
+message can tell the model that something is wrong without identifying a
+field or counterexample. A diagnostic provides additional information,
+potentially enough to resolve a substantial part of the problem. Its
+information content should be reported rather than described vaguely as
+reflection.</p>
+<p>External reference-guided stopping is assistance in experimental
+control. Carrying a correct answer forward to later checkpoints creates
+cumulative retained success, not a fresh correct judgment at every
+checkpoint. Models initially at ceiling supply no failure-eligible
+correction trials under that procedure. Previous research already
+distinguishes intrinsic correction from tool-assisted revision; the
+present framework requires those differences to remain visible in
+governance measurements <a href="#ref-huang">9</a>, <a
+href="#ref-critic">8</a>.</p>
+<p><strong>Table 5. Revision conditions supply different information.
+Equal revision counts do not equalize assistance.</strong></p>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th>Revision condition</th>
+<th>New information supplied</th>
+<th>Interpretation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Reconsideration</td>
+<td>A fixed request to revisit the answer</td>
+<td>Another response conditioned on the earlier answer and revision
+instruction</td>
+</tr>
+<tr>
+<td>Error notification</td>
+<td>The answer violates the task contract</td>
+<td>A correctness signal, without a localized diagnosis</td>
+</tr>
+<tr>
+<td>Bounded diagnostic</td>
+<td>A specified failed obligation or invalid certificate property</td>
+<td>Assisted revision with disclosed diagnostic content</td>
+</tr>
+<tr>
+<td>Full reference consequence information</td>
+<td>Computed consequences or a complete solution certificate</td>
+<td>A stronger oracle-assisted condition</td>
+</tr>
+</tbody>
+</table>
+<p>These conditions require separate histories from the same first
+answer to support a paired comparison. Equal numbers of permitted
+revisions do not equalize the information supplied. Reference-guided
+stopping can be used in each arm, but reached calls, eligible original
+failures, regressions and cumulative retained success must remain
+visible.</p>
+<h3 id="difficulty-and-independent-evidence">6.2 Difficulty and
+independent evidence</h3>
+<p>Longer prompts and more entities do not by themselves establish
+qualitatively harder reasoning. Global coupling, the need to establish
+absence of a counterexample, dense source dependence and contingent
+choices provide more precise construction dimensions. Their empirical
+difficulty still depends on the sampled instances and model
+condition.</p>
+<p>Benchmarks developed after observing failures should disclose that
+adaptation. Fresh instances from a selected family can support
+prospective within-family evaluation once the protocol is frozen, but do
+not erase the development history. Paired task views, source contexts
+and presentation orders must be grouped by their underlying system when
+estimating uncertainty.</p>
+<h2 id="limitations-and-research-obligations">7. Limitations and
+research obligations</h2>
+<p>The formal contract is an abstraction. Its vocabulary, authority
+facts, admissible worlds, conflict policy and protected queries may omit
+important real conditions. The distinction between semantic and
+epistemic obligations is analytically useful but does not supply a
+complete social or institutional theory of governance. Its terminology
+is not asserted to be new.</p>
+<p>Independent evaluators can still share a mistaken interpretation of
+the written task. Tests should accept alternate valid solutions and
+reject deliberately invalid certificates, while reviewers examine the
+specification and construction separately. Synthetic benchmark
+compliance cannot establish general source trust, practical
+authorization security or agent containment.</p>
+<p>The running examples have executable exhaustive checks over their
+stated finite domains. This establishes the illustrated consequences
+under the chosen contracts, not external validation of those contracts.
+The related-work comparison identifies the established theories being
+instantiated; independent specialist review is still needed to assess
+the synthesis and formal presentation. Its conceptual argument does not
+depend on a benchmark beating a particular model, and perfect
+performance on one finite task does not invalidate the distinction.</p>
+<h2 id="conclusion">8. Conclusion</h2>
+<p>Semantic and epistemic governance can be expressed as different
+task-relative obligations: preserve the permitted consequences of a
+change, and use claims only as the evidence contract warrants. Their
+interaction helps explain why a model may reach a plausible answer
+without satisfying the whole task. Explicit contracts make those errors
+assessable while preserving legitimate alternative solutions. They also
+make the limits of an empirical claim visible.</p>
+<h2 id="data-and-code-availability">Data and code availability</h2>
+<p>This conceptual paper introduces no new model measurements. The
+executable examples and recorded results accompany the manuscript in the
+<a
+href="https://github.com/prosessleder/semantic-epistemic-governance-foundations-preprint">foundations
+supplementary package</a>. The checker enumerates closures,
+disjoint-origin report sets, repairs, worlds, decisions and tied optimal
+observations. The preserved original fixtures are accompanied by a
+separately versioned supplemental checker for the four-cell answer
+construction, the removal-of-report case, observation branches and the
+nonempty-world guard. These fixtures do not add to or alter a
+benchmark.</p>
+<h2 id="author-contributions-and-ai-assistance">Author contributions and
+AI assistance</h2>
+<p>Timothy O’Brien is the sole author and conducted this work
+independently, without institutional affiliation. OpenAI Codex assisted
+literature discovery, implementation, checking and manuscript drafting.
+The author is responsible for the specification, interpretation,
+references and conclusions. Automated checking of examples does not
+replace independent scientific review.</p>
+<h2 id="funding">Funding</h2>
+<p>This research received no external funding.</p>
+<h2 id="competing-interests">Competing interests</h2>
+<p>The author declares no competing interests.</p>
+<h2 id="references">References</h2>
+<p><a id="ref-calvanese"></a> [1] D. Calvanese, G. De Giacomo, D. Lembo,
+M. Montali and A. Santoso. Ontology-Based Governance of Data-Aware
+Processes. In <em>Web Reasoning and Rule Systems (RR 2012)</em>, LNCS
+7497, pp. 25-41, 2012. <a
+href="https://www.inf.unibz.it/~calvanese/papers/calv-etal-RR-2012.pdf">Source</a>.</p>
+<p><a id="ref-botoeva"></a> [2] E. Botoeva, B. Konev, C. Lutz, V.
+Ryzhikov, F. Wolter and M. Zakharyaschev. Inseparability and
+Conservative Extensions of Description Logic Ontologies: A Survey.
+arXiv:1804.07805v1, 2018. <a
+href="https://arxiv.org/abs/1804.07805v1">Source</a>.</p>
+<p><a id="ref-green"></a> [3] T. J. Green, G. Karvounarakis and V.
+Tannen. Provenance Semirings. In <em>Proceedings of PODS</em>,
+pp. 31-40, 2007. doi:10.1145/1265530.1265535. <a
+href="https://www.cs.ucdavis.edu/~green/papers/pods07.pdf">Source</a>.</p>
+<p><a id="ref-provo"></a> [4] T. Lebo, S. Sahoo and D. McGuinness
+(eds.). PROV-O: The PROV Ontology. W3C Recommendation, 30 April 2013. <a
+href="https://www.w3.org/TR/2013/REC-prov-o-20130430/">Source</a>.</p>
+<p><a id="ref-arenas"></a> [5] M. Arenas, L. Bertossi and J. Chomicki.
+Answer Sets for Consistent Query Answering in Inconsistent Databases.
+<em>Theory and Practice of Logic Programming</em> 3(4-5), pp. 393-424,
+2003. doi:10.1017/S1471068403001832. Author preprint: arXiv:cs/0207094,
+2002. <a href="https://arxiv.org/abs/cs/0207094">Source</a>.</p>
+<p><a id="ref-proofwriter"></a> [6] O. Tafjord, B. Dalvi and P. Clark.
+ProofWriter: Generating Implications, Proofs, and Abductive Statements
+over Natural Language. In <em>Findings of ACL-IJCNLP</em>,
+pp. 3621-3634, 2021. doi:10.18653/v1/2021.findings-acl.317. <a
+href="https://aclanthology.org/2021.findings-acl.317/">Source</a>.</p>
+<p><a id="ref-checklist"></a> [7] M. T. Ribeiro, T. Wu, C. Guestrin and
+S. Singh. Beyond Accuracy: Behavioral Testing of NLP Models with
+CheckList. In <em>Proceedings of ACL</em>, pp. 4902-4912, 2020.
+doi:10.18653/v1/2020.acl-main.442. <a
+href="https://aclanthology.org/2020.acl-main.442/">Source</a>.</p>
+<p><a id="ref-critic"></a> [8] Z. Gou, Z. Shao, Y. Gong, Y. Shen, Y.
+Yang, N. Duan and W. Chen. CRITIC: Large Language Models Can
+Self-Correct with Tool-Interactive Critiquing. <em>ICLR</em>, 2024.
+Author preprint: arXiv:2305.11738v4. <a
+href="https://arxiv.org/abs/2305.11738v4">Source</a>.</p>
+<p><a id="ref-huang"></a> [9] J. Huang, X. Chen, S. Mishra, H. S. Zheng,
+A. Yu, X. Song and D. Zhou. Large Language Models Cannot Self-Correct
+Reasoning Yet. <em>ICLR</em>, 2024. <a
+href="https://proceedings.iclr.cc/paper_files/paper/2024/hash/8b4add8b0aa8749d80a34ca5d941c355-Abstract-Conference.html">Source</a>.</p>
+</body>
+</html>
